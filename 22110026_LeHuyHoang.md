@@ -146,6 +146,12 @@ sudo apk add iptables
 ```sudo iptables -A INPUT -p tcp --dport 80 -j REJECT```<br>
 
 **Block SSH (port 22) requests**<br>
+```sudo iptables -A INPUT -p tcp --dport 22 -j REJECT```<br>
+**Block ICMP(ping) requests**<br>
+```sudo iptables -A INPUT -p icmp --icmp-type echo-request -j REJECT```<br>
+## 5: test
+**test HTTP (port 80) with ```curl```**<br>
+```curl https://localhost```
 
 
 
